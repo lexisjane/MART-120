@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Conact Us</title>
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        form, input, button, p{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function checkInfo() {
+            var firstName = document.getElementById("fName").value;
+            var lastName = document.getElementById("lName").value;
+            var email = document.getElementById("userEmail").value;
+            var terms = document.getElementsByName("terms");
+
+            if (firstName == "") {
+                document.getElementById("fName").style.backgroundColor = "rgb(255, 104, 104)";
+                document.getElementById("fName").focus();
+                document.getElementById("noFName").innerHTML = "*Required field*";
+                document.getElementById("noFName").style.color = "red";
+                document.getElementById("noFName").style.fontSize = "10px";
+                document.getElementById("noFName").style.fontFamily = "Ariel";
+            }
+            else {
+                document.getElementById("fName").style.backgroundColor = "";
+                document.getElementById("noFName").innerHTML = "";
+            }
+
+            if (lastName == "") {
+                document.getElementById("lName").style.backgroundColor = "rgb(255, 104, 104)";
+            //    document.getElementById("lName").focus();
+                document.getElementById("noLName").innerHTML = "*Required field*";
+                document.getElementById("noLName").style.color = "red";
+                document.getElementById("noLName").style.fontSize = "10px";
+                document.getElementById("noLName").style.fontFamily = "Ariel";
+            }
+            else {
+                document.getElementById("lName").style.backgroundColor = "";
+                document.getElementById("noLName").innerHTML = "";
+            }
+
+            if (email == "") {
+                document.getElementById("userEmail").style.backgroundColor = "rgb(255, 104, 104)";
+            //    document.getElementById("userEmail").focus();
+                document.getElementById("noEmail").innerHTML = "*Required field*";
+                document.getElementById("noEmail").style.color = "red";
+                document.getElementById("noEmail").style.fontSize = "10px";
+                document.getElementById("noEmail").style.fontFamily = "Ariel";
+            }
+            else {
+                document.getElementById("userEmail").style.backgroundColor = "";
+                document.getElementById("noEmail").innerHTML = "";
+            }
+
+            if (terms[0].checked == false && terms[1].checked == false) {
+                window.alert("Please respond to the terms of agreement");
+            } 
+            if (terms[1].checked == true) {
+                window.alert("You must accept the terms of agreement to continue");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><span>Contact us!</span></h1>
+    <form action="Third Page.html" type="Post">
+        First Name: <input type="text" id="fName"><span id="noFName"></span><br>
+        <br> Last Name: <input type="text" id="lName"><span id="noLName"></span><br>
+        <br> Email: <input type="text" id="userEmail"><span id="noEmail"></span><br>
+    </form>
+    <p>Accept terms of agreement:</p>
+    <form action="Third Page.html" type="Post">
+        <input type="radio" name="terms" value="yes">Yes<br>
+        <input type="radio" name="terms" value="no">No<br>
+        <br><button id="submit" type="button" onclick="checkInfo();">Submit</button>
+    </form>
+    <br><a class="green" href="My First Website.html">Go back to homepage</a>
+    <br><a class="green" href="Second Page.html">Go back to short story</a>
+</body>

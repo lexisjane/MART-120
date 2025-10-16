@@ -1,0 +1,23 @@
+span{
+    color:purple;
+    font-family:Impact; 
+    font-size: 80px;
+    text-align: center;
+}
+.green{
+    text-align:center;
+    color: rgb(90, 154, 79);
+    font-family: Impact;
+    font-size: 20px;
+}
+#fancy{
+    color:darkcyan;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+#pink{
+    color: plum;
+    font-size: 20px;
+}
+
